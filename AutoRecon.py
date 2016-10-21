@@ -18,8 +18,8 @@ def main():
         raise
     procs = []
     whois_cmd = ['whois', domain]
-    wpscan_cmd = ['wpscan', '--url', domain]
     dig_cmd = ['dig', '-t', 'txt', '+short', domain]
+    wpscan_cmd = ['wpscan', '--update', '--url', domain]
     nmap_hosts_cmd = ['nmap', '-sn', ip_address + '/24']
     nmap_enum_cmd = ['nmap', '-Pn', '-sn', '--script=http-enum', domain]
     nmap_dnsbrute_cmd = ['nmap', '-Pn', '-sn', '--script=dns-brute', domain]
