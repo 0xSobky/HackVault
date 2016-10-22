@@ -33,7 +33,7 @@ def main():
             'Open Ports': nmap_ports_cmd, 'Active Hosts': nmap_hosts_cmd,
             'WPScan': wpscan_cmd, 'Directories': nmap_enum_cmd,
             'WAFs': nmap_waf_cmd, 'Config Backups': nmap_conf_cmd,
-            'TXT records': dig_cmd}
+            'TXT Records': dig_cmd}
 
     for title, cmd in cmds.items():
         try:
