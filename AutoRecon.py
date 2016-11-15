@@ -23,7 +23,7 @@ def main():
     nmap_hosts_cmd = ['nmap', '-sn', ip_address + '/24']
     nmap_script_names = ('dns-brute, hostmap-ip2hosts, banner,'
                          'http-robots.txt, http-crossdomainxml, http-enum,'
-                         'http-config-backup, http-devframework,'
+                         'http-config-backup, http-devframework, http-methods,'
                          'http-waf-fingerprint, http-sitemap-generator,'
                          'http-xssed, http-shellshock, ftp-anon, ssl-cert,'
                          'ssl-poodle, ssl-heartbleed, ssl-enum-ciphers')
