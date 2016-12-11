@@ -21,7 +21,7 @@ def main():
     dig_cmd = ['dig', '-t', 'txt', '+short', domain]
     wpscan_cmd = ['wpscan', '--force', '--update', '--url', domain]
     nmap_hosts_cmd = ['nmap', '-sn', ip_address + '/24']
-    nmap_script_names = ('dns-brute, hostmap-ip2hosts, banner,'
+    nmap_script_names = ('dns-brute, hostmap-ip2hosts, banner, http-headers,'
                          'http-robots.txt, http-crossdomainxml, http-enum,'
                          'http-config-backup, http-devframework, http-methods,'
                          'http-waf-fingerprint, http-sitemap-generator,'
