@@ -51,7 +51,7 @@ def main():
             proc.title = title
             procs.append(proc)
         except OSError:
-            print '%s >> Dependency error occurred!\n' % title
+            print '%s >> Dependency error occurred.\n' % title
 
     while True:
         for proc in procs:
