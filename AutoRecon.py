@@ -24,12 +24,11 @@ def main():
     dig_cmd = ['dig', '-t', 'txt', '+short', domain]
     wpscan_cmd = ['wpscan', '--force', '--update', '--url', domain]
     nmap_hosts_cmd = ['nmap', '-sn', ip_address + '/24']
-    nmap_script_names = ('dns-brute, hostmap-ip2hosts, banner, http-headers,'
-                         'http-robots.txt, http-crossdomainxml, http-enum,'
-                         'http-config-backup, http-devframework, http-methods,'
-                         'http-waf-fingerprint, http-sitemap-generator,'
-                         'http-xssed, http-shellshock, ftp-anon, ssl-cert,'
-                         'ssl-poodle, ssl-heartbleed, ssl-enum-ciphers')
+    nmap_script_names = ('banner, dns-brute, ftp-anon, hostmap-ip2hosts,'
+                         'http-config-backup, http-cross*, http-devframework,'
+                         'http-enum, http-headers, http-methods, http-robots.txt,'
+                         'http-shellshock, http-sitemap-generator, http-waf-fingerprint,'
+                         'http-xssed, ssl-cert, ssl-enum-ciphers, ssl-heartbleed, ssl-poodle')
     nmap_full_cmd = ['nmap', '-sV', '-sS', '-A', '-Pn', '--script',
                      nmap_script_names, domain]
     cmds = {'TXT Records': dig_cmd, 'WHOIS Info': whois_cmd,
