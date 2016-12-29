@@ -47,7 +47,7 @@ def main():
 
     for title, cmd in cmds.items():
         try:
-            proc = subprocess.Popen(cmd, stdout=subprocess.PIPE)
+            proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             proc.title = title
             procs.append(proc)
         except OSError:
