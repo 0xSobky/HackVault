@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-Automates the reconnaissance process of web hacking.
+Automate the reconnaissance process of web hacking.
 """
 import sys
 import socket
@@ -9,7 +9,7 @@ import subprocess
 from time import sleep
 
 def main():
-    """ Executes main code """
+    """Execute main code."""
     try:
         domain = sys.argv[1]
         ip_address = socket.gethostbyname(domain)
@@ -36,7 +36,7 @@ def main():
             'WPScan': wpscan_cmd}
 
     def handle_proc(proc):
-        """ handles subprocesses outputs """
+        """Handle subprocesses outputs."""
         separator = '=================='
         output = ''.join(proc.stdout.readlines())
         print proc.title
