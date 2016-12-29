@@ -10,11 +10,14 @@ from time import sleep
 
 def main():
     """ Executes main code """
-    domain = sys.argv[1]
     try:
+        domain = sys.argv[1]
         ip_address = socket.gethostbyname(domain)
+    except IndexError:
+        print 'Error: Domain name not specified.'
+        sys.exit(1)
     except socket.gaierror:
-        print 'Error: Domain name cannot be resolved!'
+        print 'Error: Domain name cannot be resolved.'
         raise
     procs = []
     whois_cmd = ['whois', domain]
