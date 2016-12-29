@@ -32,7 +32,7 @@ def main():
     nmap_full_cmd = ['nmap', '-sV', '-sS', '-A', '-Pn', '--script',
                      nmap_script_names, domain]
     cmds = {'TXT Records': dig_cmd, 'WHOIS Info': whois_cmd,
-            'Nmap Results': nmap_full_cmd, 'Active Hosts': nmap_hosts_cmd,
+            'Active Hosts': nmap_hosts_cmd, 'Nmap Results': nmap_full_cmd,
             'WPScan': wpscan_cmd}
 
     def handle_proc(proc):
@@ -66,5 +66,5 @@ def main():
             sleep(1)
 
 if __name__ == '__main__':
-    print "This is gonna take quite a while; you better go make some coffee!\n"
+    print 'This is gonna take quite a while; you better go make some coffee!\n'
     main()
