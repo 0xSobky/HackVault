@@ -28,7 +28,8 @@ def main():
                          'http-config-backup, http-cross*, http-devframework,'
                          'http-enum, http-headers, http-methods, http-robots.txt,'
                          'http-shellshock, http-sitemap-generator, http-waf-fingerprint,'
-                         'http-xssed, ssl-cert, ssl-enum-ciphers, ssl-heartbleed, ssl-poodle')
+                         'http-xssed, smtp-open-relay, ssl-cert, ssl-enum-ciphers,'
+                         'ssl-heartbleed, ssl-poodle')
     nmap_full_cmd = ['nmap', '-sV', '-sS', '-A', '-Pn', '--script',
                      nmap_script_names, domain]
     cmds = {'TXT Records': dig_cmd, 'WHOIS Info': whois_cmd,
