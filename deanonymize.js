@@ -19,7 +19,7 @@ function deanonymize(attackMethod, endpoint, idList, callback) {
     }());
     /**
      * Create new DOM elements.
-     * @param tagName {string}, element's tag name.
+     * @param tagName {string}, elements' tag name.
      * @return {array}, an array of DOM nodes.
      */
     var createElements = function(tagName) {
@@ -45,7 +45,7 @@ function deanonymize(attackMethod, endpoint, idList, callback) {
     };
     /**
      * Conduct tests in regard to a given function.
-     * @param testFn {function}, element's tag name.
+     * @param testFn {function}, a test function.
      * @return void.
      */
     var assess = function(testFn) {
