@@ -3,7 +3,7 @@ This is a container repository for my public web hacks. For more information, pl
 Ideally, it'd be continually updated with new interesting stuff over time.
 
 ## Support
-If you find the stuff in this repo interesting and would like to see more research of the kind, you may consider passing some bitcoin dust to this address `14FZTgfX4QmDGUoXYpSUdKFJEjbvQnArAu`.
+If you find the stuff in this repo interesting and would like to see more research of the kind, you may consider passing some bitcoin dust to this address `12FyKqVqVxpFDSr6puHbDMyiNKtR7cQwDb`.
 
 ## Contributors
 * [@0xSobky](https://twitter.com/0xSobky)
