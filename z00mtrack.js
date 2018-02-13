@@ -15,7 +15,7 @@ app.all('/', (req, res) => res.send(`
                 return window.devicePixelRatio + screenHeight / window.innerHeight;
             };
             let signature = getSignature();
-            switch(location.hash.slice(1)) {
+            switch (location.hash.slice(1)) {
                 case '':
                     location.replace('https://z00mdetect.herokuapp.com');
                     break;
