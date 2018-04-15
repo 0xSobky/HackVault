@@ -72,7 +72,7 @@ function deanonymize(attackMethod, endpoint, idList, callback) {
             }
             return false;
         };
-    } else if(attackMethod === 'statusCode') {
+    } else if (attackMethod === 'statusCode') {
         elNodes = (/chrome/i.test(navigator.userAgent)) ? createElements('link') :
                            createElements('script');
         /**
